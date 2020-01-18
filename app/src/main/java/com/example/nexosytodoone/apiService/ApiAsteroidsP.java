@@ -2,10 +2,9 @@ package com.example.nexosytodoone.apiService;
 
 import android.util.Log;
 
-import com.example.pruebamarketmix.activities.MainActivity;
-import com.example.pruebamarketmix.activities.ServicioExplicitoActivity;
-import com.example.pruebamarketmix.models.*;
-import com.example.pruebamarketmix.utils.Constants;
+import com.example.nexosytodoone.activities.*;
+import com.example.nexosytodoone.models.*;
+import com.example.nexosytodoone.utils.Constants;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -40,15 +39,15 @@ public class ApiAsteroidsP {
 
     }
 
-    public void getApiAsteroids(MainActivity context){
-        getAsteroidsp(context);
+    public void getApiClima(MainActivity context){
+        getApiClimap(context);
     }
 
     /***
      *        Método que realiza la consulta al APi de la nasa con mi fecha de nacimiento para observar los asteroides cercanos a la tierra en esa fecha.
      * @param context   // Contexto para llevarlos a la Interfaz.
      */
-    private void getAsteroidsp(final MainActivity context){
+    private void getApiClimap(final MainActivity context){
 
         Call<AsteroidContainer> call = this.apiInterface.getAsteroids("1991-08-08","1991-08-10","qvXJabbnDj7KD2FpQKm2bQg0vleUKfg9Zr4Fg461");
         call.enqueue(new Callback<AsteroidContainer>() {
@@ -58,7 +57,7 @@ public class ApiAsteroidsP {
                     if(!response.isSuccessful()){
                     asteroidsList = null;
                     return ;
-                }
+                    }
                     AsteroidContainer asteroidContainer = (AsteroidContainer) response.body();
                     asteroidsList = new LinkedList<>();
                     Iterator it = asteroidContainer.getNear_earth_objects().entrySet().iterator();
@@ -82,61 +81,6 @@ public class ApiAsteroidsP {
 
             }
         });
-    }
-
-    public void getApiAsteroidsDate(String year, String month, ServicioExplicitoActivity context){
-        getApiAsteroidsDatep(year, month, context);
-
-    }
-
-    /***
-     *        Método que realiza la consulta al API de la nasa con las fechas en las que el usuario desea observar los asteroides cercanos a la tierra.
-     * @param year       // Contiene el año en que el usuario desea buscar.
-     * @param month     // Contiene el mes en las que el usuario desea buscar.
-     * @param context   // Contexto para llevarlos a la Interfaz.
-     */
-    private void getApiAsteroidsDatep(String year, String month, final ServicioExplicitoActivity context ){
-        Call<AsteroidContainer> call = this.apiInterface.getAsteroids(year + "-" + month +"-15", year + "-" + month +"-20", "qvXJabbnDj7KD2FpQKm2bQg0vleUKfg9Zr4Fg461");
-        call.enqueue(new Callback<AsteroidContainer>() {
-            @Override
-            public void onResponse(Call<AsteroidContainer> call, Response<AsteroidContainer> response) {
-                if(!response.isSuccessful()){
-                    asteroidsList = null;
-                    Log.e("Entre", "Por aqui en respuesta: "+ response.message());
-                    return ;
-                }
-                AsteroidContainer asteroidContainer = (AsteroidContainer) response.body();
-                asteroidsList = new LinkedList<>();
-
-                Iterator it = asteroidContainer.getNear_earth_objects().entrySet().iterator();
-                while (it.hasNext()) {
-                    Map.Entry pair = (Map.Entry)it.next();
-                    List<Asteroids> temp = (List<Asteroids>)pair.getValue();
-                    for (int i = 0; i< temp.size(); i++){
-                        asteroidsList.add(temp.get(i));
-                    }
-                    //System.out.println(pair.getKey() + " = " + pair.getValue());
-                    it.remove();
-                }
-
-                context.executeViewRecucler(asteroidsList.size(), asteroidsList);
-
-                Log.e("Cantidad de asteroides ", String.valueOf(asteroidsList.size()));
-                //context.setCategorySpinnerP(asteroidsList);
-                return;
-
-            }
-
-            @Override
-            public void onFailure(Call<AsteroidContainer> call, Throwable t) {
-                Log.e("Entre", "Por aqui en falla " + t.getMessage());
-                asteroidsList = null;
-                //context.setCategorySpinnerP(listCategories);
-                return;
-
-            }
-        });
-
     }
 
     public List<Asteroids> getAsteroidsList() {

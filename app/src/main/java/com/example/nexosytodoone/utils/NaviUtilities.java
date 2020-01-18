@@ -13,8 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.pruebamarketmix.R;
-import com.example.pruebamarketmix.models.ShopingCar;
+import com.example.nexosytodoone.R;
 
 
 public class NaviUtilities  {
@@ -102,7 +101,7 @@ public class NaviUtilities  {
         }
     }
 
-    public void callActivityParameters(Activity actualActivity, Class nextActivity, ShopingCar car){
+    public void callActivityParameters(Activity actualActivity, Class nextActivity, Object car){
         callActivityParametersP(actualActivity, nextActivity, car);
     }
 
@@ -112,11 +111,11 @@ public class NaviUtilities  {
      * @param nextActivity Contexto siguiente quien recibe el llamado.
      * @param car Objetivo que va a ser enviado al activity siguiente.
      */
-    private void callActivityParametersP(Activity actualActivity, Class nextActivity, ShopingCar car){
+    private void callActivityParametersP(Activity actualActivity, Class nextActivity, Object car){
         try{
 
             this.executeIntent = new Intent(actualActivity, nextActivity);
-            this.executeIntent.putExtra("CarritoCompras", car);
+           // this.executeIntent.putExtra("CarritoCompras", (String)car);
             actualActivity.startActivity(executeIntent);
         }
         catch(Exception e){
