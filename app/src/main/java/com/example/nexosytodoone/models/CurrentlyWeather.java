@@ -1,31 +1,90 @@
 package com.example.nexosytodoone.models;
 
-public class RealTimeWeather {
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
+public class CurrentlyWeather {
+
+    @SerializedName("time")
+    @Expose
     private long time;
-    private String summary;
-    private String icon;
-    private Long nearestStormDistance;
-    private Long nearestStormBearing;
-    private Long precipIntensity;
-    private Long precipProbability;
-    private double temperature;
-    private double apparentTemperature;
-    private double dewPoint;
-    private double humidity;
-    private double pressure;
-    private double windSpeed;
-    private double indGust;
-    private double windBearing;
-    private double cloudCover;
-    private double uvIndex;
-    private double visibility;
-    private Long ozone;
 
-    public RealTimeWeather() {
+    @SerializedName("summary")
+    @Expose
+    private String summary;
+
+    @SerializedName("icon")
+    @Expose
+    private String icon;
+
+    @SerializedName("nearestStormDistanc")
+    @Expose
+    private Long nearestStormDistance;
+
+    @SerializedName("nearestStormBearing")
+    @Expose
+    private Long nearestStormBearing;
+
+    @SerializedName("precipIntensity")
+    @Expose
+    private Long precipIntensity;
+
+    @SerializedName("precipProbability")
+    @Expose
+    private Long precipProbability;
+
+    @SerializedName("temperature")
+    @Expose
+    private double temperature;
+
+    @SerializedName("apparentTemperature")
+    @Expose
+    private double apparentTemperature;
+
+    @SerializedName("dewPoint")
+    @Expose
+    private double dewPoint;
+
+    @SerializedName("humidity")
+    @Expose
+    private double humidity;
+
+    @SerializedName("pressure")
+    @Expose
+    private double pressure;
+
+    @SerializedName("windSpeed")
+    @Expose
+    private double windSpeed;
+
+    @SerializedName("indGust")
+    @Expose
+    private double indGust;
+
+    @SerializedName("windBearing")
+    @Expose
+    private double windBearing;
+
+    @SerializedName("cloudCover")
+    @Expose
+    private double cloudCover;
+
+    @SerializedName("uvIndex")
+    @Expose
+    private double uvIndex;
+
+    @SerializedName("visibility")
+    @Expose
+    private double visibility;
+
+    @SerializedName("ozone")
+    @Expose
+    private double ozone;
+
+    public CurrentlyWeather() {
     }
 
-    public RealTimeWeather(long time, String summary, String icon, Long nearestStormDistance, Long nearestStormBearing, Long precipIntensity, Long precipProbability, double temperature, double apparentTemperature, double dewPoint, double humidity, double pressure, double windSpeed, double indGust, double windBearing, double cloudCover, double uvIndex, double visibility, Long ozone) {
+    public CurrentlyWeather(long time, String summary, String icon, Long nearestStormDistance, Long nearestStormBearing, Long precipIntensity, Long precipProbability, double temperature, double apparentTemperature, double dewPoint, double humidity, double pressure, double windSpeed, double indGust, double windBearing, double cloudCover, double uvIndex, double visibility, double ozone) {
         this.time = time;
         this.summary = summary;
         this.icon = icon;
@@ -191,11 +250,11 @@ public class RealTimeWeather {
         this.visibility = visibility;
     }
 
-    public Long getOzone() {
+    public double getOzone() {
         return ozone;
     }
 
-    public void setOzone(Long ozone) {
+    public void setOzone(double ozone) {
         this.ozone = ozone;
     }
 }

@@ -11,10 +11,10 @@
         android:id="@+id/imgViewLogoSplah"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        app:srcCompat="@drawable/meteoro"
+        app:srcCompat="@drawable/weather_logo"
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
-        tools:srcCompat="@drawable/meteoro">
+        tools:srcCompat="@drawable/weather_logo">
 
     </ImageView>
 
@@ -54,7 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Wait"
-        android:textColor="@color/colorGradientStart"
+        android:textColor="@color/colorAccent"
         android:textStyle="bold"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"

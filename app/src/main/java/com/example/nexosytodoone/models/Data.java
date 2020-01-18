@@ -1,15 +1,26 @@
 package com.example.nexosytodoone.models;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class Data {
 
+    @SerializedName("time")
+    @Expose
     private long time;
-    private long precipIntensity;
-    private long precipProbability;
+
+    @SerializedName("precipIntensity")
+    @Expose
+    private double precipIntensity;
+
+    @SerializedName("precipProbability")
+    @Expose
+    private double precipProbability;
 
     public Data() {
     }
 
-    public Data(long time, long precipIntensity, long precipProbability) {
+    public Data(long time, double precipIntensity, double precipProbability) {
         this.time = time;
         this.precipIntensity = precipIntensity;
         this.precipProbability = precipProbability;
@@ -23,19 +34,19 @@ public class Data {
         this.time = time;
     }
 
-    public long getPrecipIntensity() {
+    public double getPrecipIntensity() {
         return precipIntensity;
     }
 
-    public void setPrecipIntensity(long precipIntensity) {
+    public void setPrecipIntensity(double precipIntensity) {
         this.precipIntensity = precipIntensity;
     }
 
-    public long getPrecipProbability() {
+    public double getPrecipProbability() {
         return precipProbability;
     }
 
-    public void setPrecipProbability(long precipProbability) {
+    public void setPrecipProbability(double precipProbability) {
         this.precipProbability = precipProbability;
     }
 }

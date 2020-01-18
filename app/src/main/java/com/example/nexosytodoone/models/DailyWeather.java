@@ -1,28 +1,37 @@
 package com.example.nexosytodoone.models;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class DailyWeather {
 
-    private String summary;
+    @SerializedName("data")
+    @Expose
+    private List<DataDaily> data = null;
+    @SerializedName("icon")
+    @Expose
     private String icon;
-    List<DataDaily> data;
+    @SerializedName("summary")
+    @Expose
+    private String summary;
 
     public DailyWeather() {
     }
 
-    public DailyWeather(String summary, String icon, List<DataDaily> data) {
-        this.summary = summary;
-        this.icon = icon;
+    public DailyWeather(List<DataDaily> data, String icon, String summary) {
         this.data = data;
-    }
-
-    public String getSummary() {
-        return summary;
-    }
-
-    public void setSummary(String summary) {
+        this.icon = icon;
         this.summary = summary;
+    }
+
+    public List<DataDaily> getData() {
+        return data;
+    }
+
+    public void setData(List<DataDaily> data) {
+        this.data = data;
     }
 
     public String getIcon() {
@@ -33,11 +42,11 @@ public class DailyWeather {
         this.icon = icon;
     }
 
-    public List<DataDaily> getData() {
-        return data;
+    public String getSummary() {
+        return summary;
     }
 
-    public void setData(List<DataDaily> data) {
-        this.data = data;
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 }

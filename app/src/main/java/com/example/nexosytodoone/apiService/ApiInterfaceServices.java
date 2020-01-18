@@ -1,9 +1,14 @@
 package com.example.nexosytodoone.apiService;
 
-import com.example.pruebamarketmix.models.*;
+import com.example.nexosytodoone.models.*;
+
 
 import retrofit2.Call;
+import retrofit2.Response;
+import retrofit2.http.Body;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /***
@@ -11,17 +16,22 @@ import retrofit2.http.Query;
  */
 public interface ApiInterfaceServices {
 
+    String apiKey = "";
 
     /***
-     *        Método que se encarga de realizar el llamado a la api utilizando la librería Retrofit.
-     * @param START_DATE  // Fecha de inicio que se le envía a el servicio de la para definir los parámetros de búsqueda.
-     * @param END_DATE    // Fecha final que se le envía a el servicio de la para definir los parámetros de búsqueda.
-     * @param API_KEY    // String que contiene api Key de autenticación para realizar la consulta al servicio.
+     *        metodo que se encarga de hacer el llmado a retrofit  para la consulta en el api
+     * @param latitude
+     * @param longitude
      * @return
      */
 
-    @GET("feed")
-    Call<AsteroidContainer> getAsteroids(@Query("start_date") String START_DATE, @Query("end_date") String END_DATE, @Query("api_key") String API_KEY);
+    @GET("{latitude},{longitude}")
+    Call<Weather> getClima(@Path("latitude") String latitude, @Path("longitude") String longitude );
+
+    //https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=403ae1a379a3fa52457165ce8522afb2
+
+    @GET("weather")
+    Call<Clima> getClima2(@Query("lat") String lat, @Query("lon") String longitude, @Query("appid") String appid );
 
 
 }

@@ -1,12 +1,23 @@
 package com.example.nexosytodoone.models;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class MinutelyWeather {
 
+    @SerializedName("summary")
+    @Expose
     private String summary;
+
+    @SerializedName("icon")
+    @Expose
     private String icon;
-    List<Data> data;
+
+    @SerializedName("data")
+    @Expose
+    private List<Data> data;
 
     public MinutelyWeather() {
     }

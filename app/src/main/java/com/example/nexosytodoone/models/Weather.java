@@ -1,21 +1,50 @@
 package com.example.nexosytodoone.models;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class Weather {
 
+    @SerializedName("latitud")
+    @Expose
     private double latitud;
+
+    @SerializedName("longitude")
+    @Expose
     private double longitude;
+
+    @SerializedName("timeZone")
+    @Expose
     private String timeZone;
-    private RealTimeWeather currently;
+
+    @SerializedName("currently")
+    @Expose
+    private CurrentlyWeather currently;
+
+    @SerializedName("minutely")
+    @Expose
     private MinutelyWeather minutely;
+
+    @SerializedName("hourly")
+    @Expose
     private HourlyWeather hourly;
+
+    @SerializedName("daily")
+    @Expose
     private DailyWeather daily;
+
+    @SerializedName("flags")
+    @Expose
     private Flags flags;
-    private double offset;
+
+    @SerializedName("offset")
+    @Expose
+    private Integer offset;
 
     public Weather() {
     }
 
-    public Weather(double latitud, double longitude, String timeZone, RealTimeWeather currently, MinutelyWeather minutely, HourlyWeather hourly, DailyWeather daily, Flags flags, double offset) {
+    public Weather(double latitud, double longitude, String timeZone, CurrentlyWeather currently, MinutelyWeather minutely, HourlyWeather hourly, DailyWeather daily, Flags flags, Integer offset) {
         this.latitud = latitud;
         this.longitude = longitude;
         this.timeZone = timeZone;
@@ -51,11 +80,11 @@ public class Weather {
         this.timeZone = timeZone;
     }
 
-    public RealTimeWeather getCurrently() {
+    public CurrentlyWeather getCurrently() {
         return currently;
     }
 
-    public void setCurrently(RealTimeWeather currently) {
+    public void setCurrently(CurrentlyWeather currently) {
         this.currently = currently;
     }
 
@@ -95,7 +124,7 @@ public class Weather {
         return offset;
     }
 
-    public void setOffset(double offset) {
+    public void setOffset(Integer offset) {
         this.offset = offset;
     }
 }
