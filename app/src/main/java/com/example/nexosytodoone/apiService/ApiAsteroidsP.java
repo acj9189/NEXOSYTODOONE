@@ -29,7 +29,7 @@ public class ApiAsteroidsP {
 
     /***
      *     Se encarga de configurar todo los parámetros necesarios para que la librería los utilice según la configuración.
-     *     ///
+     *     /// Andres
      */
     public ApiAsteroidsP(){
         Retrofit retrofit = new Retrofit.Builder()
