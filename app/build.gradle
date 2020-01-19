@@ -32,6 +32,13 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
 
+    //Libreria para la loacition y mucghas otras cosas de google
+    implementation "com.google.android.gms:play-services-location:15.0.1"
+
+    //Libreria Picaso para el manejo de imagenes
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+
 
 
 }

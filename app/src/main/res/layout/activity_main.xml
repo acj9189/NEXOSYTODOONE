@@ -1,7 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainActivity"/>
+    tools:context=".activities.MainActivity"
+    android:background="@drawable/gradient_welcome">
+
+
+        <TextView
+            android:id="@+id/textViewCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:text="@string/Ubicacion"
+            android:textColor="@color/colorGradientEnd"
+            android:textSize="35dp"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/textViewCXityLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/Temperature"
+            android:textColor="@color/colorGradientEnd"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_below="@+id/textViewCity"
+            android:textStyle="italic"
+            android:textSize="20dp">
+
+        </TextView>
+
+        <ImageView
+        android:id="@+id/imgViewClima"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/weather_logo"
+        android:layout_marginTop="10dp"
+            android:layout_below="@+id/textViewCXityLocation"
+        android:layout_centerHorizontal="true"
+        tools:srcCompat="@drawable/sunny">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/textViewTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/Temperature"
+            android:textColor="@color/colorGradientEnd"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_below="@+id/imgViewClima"
+            android:textStyle="bold"
+            android:textSize="40dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/textViewTempP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/temp"
+            android:textColor="@color/colorGradientEnd"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_below="@+id/textViewTemp"
+            android:textStyle="italic"
+            android:textSize="30dp">
+
+        </TextView>
+
+        <LinearLayout
+            android:id="@+id/Linear1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewTempP"
+            android:orientation="horizontal">
+
+                <TableLayout
+                    android:id="@+id/table"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="5dp">
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/textViewHumedad"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_margin="25dp"
+                                    android:text="@string/Humidity"
+                                    android:textColor="@color/colorGradientEnd"
+                                    android:textSize="25dp"
+                                    android:textStyle="bold">
+
+                                </TextView>
+
+                                <TextView
+                                    android:id="@+id/textViewClima"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_margin="25dp"
+                                    android:text="@string/Clima"
+                                    android:textColor="@color/colorGradientEnd"
+                                    android:textSize="25dp"
+                                    android:textStyle="bold">
+
+                                </TextView>
+
+                                <TextView
+                                    android:id="@+id/textViewPresion"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_margin="25dp"
+                                    android:layout_marginRight="25dp"
+                                    android:text="@string/Presion"
+                                    android:textColor="@color/colorGradientEnd"
+
+                                    android:textSize="25dp"
+                                    android:textStyle="bold">
+
+                                </TextView>
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/textViewHumedadI"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="65dp"
+                                    android:text="@string/Humidity"
+                                    android:textColor="@color/colorGradientEnd"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:textStyle="italic"
+                                    android:textSize="20dp">
+
+                                </TextView>
+
+                                <TextView
+                                    android:id="@+id/textViewClimaI"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="30dp"
+                                    android:text="@string/Clima"
+                                    android:textColor="@color/colorGradientEnd"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:textStyle="italic"
+                                    android:textSize="20dp">
+
+                                </TextView>
+
+                                <TextView
+                                    android:id="@+id/textViewPresionI"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="43dp"
+                                    android:text="@string/Presion"
+                                    android:textColor="@color/colorGradientEnd"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:textStyle="italic"
+                                    android:textSize="20dp">
+
+                                </TextView>
+                        </TableRow>
+
+                </TableLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="171dp"
+            android:layout_height="41dp"
+            android:layout_below="@+id/Linear1"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_rounded_orange_big"
+            android:padding="8dp"
+            android:text="@string/Consultar"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp">
+
+        </Button>
+
+</RelativeLayout>

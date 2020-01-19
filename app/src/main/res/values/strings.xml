@@ -6,13 +6,17 @@
     <string name="titleM">El Clima</string>
 
     <string name="home">Home</string>
-    <string name="search">Buscar API</string>
-    <string name="carrito">Carrito</string>
+    <string name="titleMainActivity">Aquí podrá listar todos El clima de su ubicación actual.</string>
+    <string name="Permisos">"Se garantizo el permiso de uso de la ubicación"</string>
+    <string name="Temperature">Temperatura</string>
+    <string name="temp">0° K</string>
+    <string name="tempI">° K</string>
 
-    <string name="titleMainActivity">Este es el carrito de los asteroides avistados en el año de nacimiento de Andrés.</string>
-    <string name="titleServicioExplecitoActivity">Aquí podrá listar todos los objetos cercanos al planeta tierra durante el año y el mes que usted desee utilizando un servicio de la NASA.</string>
-    <string name="firstYear">Indique el año a observar</string>
-    <string name="endYear">Indique el mes del año a observar</string>
+    <string name="Ubicacion">Ubicación</string>
+    <string name="Humidity">Humedad</string>
+    <string name="Clima">Clima</string>
+    <string name="Presion">Presion</string>
+
     <string name="Consultar">Consultar</string>
 
 

@@ -16,7 +16,7 @@ import com.example.nexosytodoone.utils.NaviUtilities;
  */
 public class SplashActivity extends AppCompatActivity {
 
-    private final int DURACION_SPLASH = 4500;
+    private final int DURACION_SPLASH = 5500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

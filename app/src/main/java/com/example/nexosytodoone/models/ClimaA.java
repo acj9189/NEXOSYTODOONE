@@ -3,7 +3,7 @@ package com.example.nexosytodoone.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-class ClimaA {
+public class ClimaA {
 
     @SerializedName("id")
     @Expose

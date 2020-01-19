@@ -7,11 +7,11 @@ class Coordenadas {
 
     @SerializedName("lon")
     @Expose
-    private long lon;
+    private double lon;
 
     @SerializedName("lat")
     @Expose
-    private long lat;
+    private double lat;
 
     public Coordenadas() {
     }
@@ -21,7 +21,7 @@ class Coordenadas {
         this.lat = lat;
     }
 
-    public long getLon() {
+    public double getLon() {
         return lon;
     }
 
@@ -29,7 +29,7 @@ class Coordenadas {
         this.lon = lon;
     }
 
-    public long getLat() {
+    public double getLat() {
         return lat;
     }
 

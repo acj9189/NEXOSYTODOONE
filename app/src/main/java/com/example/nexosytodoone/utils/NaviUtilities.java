@@ -75,7 +75,7 @@ public class NaviUtilities  {
         text.setText(message);
         Toast toast = new Toast(applicationContext);
         toast.setGravity(Gravity.CENTER_VERTICAL, 10, 10);
-        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(layout);
         toast.show();
 
