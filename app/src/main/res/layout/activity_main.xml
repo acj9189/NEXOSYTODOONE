@@ -7,6 +7,15 @@
     tools:context=".activities.MainActivity"
     android:background="@drawable/gradient_welcome">
 
+        <com.iammert.library.readablebottombar.ReadableBottomBar
+            android:id="@+id/ReadableBottomBar1"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            app:rbb_indicatorHeight="7dp"
+            app:rbb_indicatorColor="@color/colorGradientStart"
+            app:rbb_initialIndex="0"
+            app:rbb_tabs="@xml/tabs"/>
+
 
         <TextView
             android:id="@+id/textViewCity"
@@ -14,6 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_centerHorizontal="true"
+            android:layout_below="@+id/ReadableBottomBar1"
             android:text="@string/Ubicacion"
             android:textColor="@color/colorGradientEnd"
             android:textSize="35dp"
@@ -151,7 +161,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="65dp"
                                     android:text="@string/Humidity"
-                                    android:textColor="@color/colorGradientEnd"
+                                    android:textColor="#666666"
                                     android:layout_centerHorizontal="true"
                                     android:layout_centerVertical="true"
                                     android:textStyle="italic"
@@ -165,7 +175,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="30dp"
                                     android:text="@string/Clima"
-                                    android:textColor="@color/colorGradientEnd"
+                                    android:textColor="#666666"
                                     android:layout_centerHorizontal="true"
                                     android:layout_centerVertical="true"
                                     android:textStyle="italic"
@@ -179,7 +189,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="43dp"
                                     android:text="@string/Presion"
-                                    android:textColor="@color/colorGradientEnd"
+                                    android:textColor="#666666"
                                     android:layout_centerHorizontal="true"
                                     android:layout_centerVertical="true"
                                     android:textStyle="italic"

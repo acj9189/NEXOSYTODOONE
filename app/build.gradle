@@ -38,7 +38,8 @@ dependencies {
     //Libreria Picaso para el manejo de imagenes
     implementation 'com.squareup.picasso:picasso:2.71828'
 
-
+    //Libreria Design-Credits para el menu
+    implementation 'com.github.iammert:ReadableBottomBar:0.2'
 
 
 }

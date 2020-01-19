@@ -7,6 +7,7 @@
 
     <string name="home">Home</string>
     <string name="titleMainActivity">Aquí podrá listar todos El clima de su ubicación actual.</string>
+    <string name="titleExplicit">Aquí podrá listar todos El clima de su ubicación que desee.</string>
     <string name="Permisos">"Se garantizo el permiso de uso de la ubicación"</string>
     <string name="Temperature">Temperatura</string>
     <string name="temp">0° K</string>
@@ -19,9 +20,11 @@
 
     <string name="Consultar">Consultar</string>
 
+    <string name="lat">Ingrese la Latitud</string>
+    <string name="lon">Ingrese la Longitud</string>
 
-
-
+    <string name="search">Clima</string>
+    <string name="Encontrar">Guardados</string>
 
 
 </resources>

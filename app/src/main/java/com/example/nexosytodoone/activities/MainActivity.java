@@ -21,6 +21,7 @@ import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.squareup.picasso.Picasso;
+import com.iammert.library.readablebottombar.ReadableBottomBar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView textViewPresionI;
     private ImageView imgViewClima;
 
+    private ReadableBottomBar bottomBar;
+
     private NaviUtilities util;
 
     @Override
@@ -49,6 +52,13 @@ public class MainActivity extends AppCompatActivity {
         setTitle(R.string.title);
 
         util = new NaviUtilities();
+
+        textViewCXityLocation = (TextView) findViewById(R.id.textViewCXityLocation);
+        textViewTempP = (TextView) findViewById(R.id.textViewTempP);
+        textViewHumedadI = (TextView) findViewById(R.id.textViewHumedadI);
+        textViewClimaI = (TextView) findViewById(R.id.textViewClimaI);
+        textViewPresionI = (TextView) findViewById(R.id.textViewPresionI);
+        imgViewClima = (ImageView) findViewById(R.id.imgViewClima);
 
         //Prueba API
         this.api = new ApiClima();
@@ -69,12 +79,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        textViewCXityLocation = (TextView) findViewById(R.id.textViewCXityLocation);
-        textViewTempP = (TextView) findViewById(R.id.textViewTempP);
-        textViewHumedadI = (TextView) findViewById(R.id.textViewHumedadI);
-        textViewClimaI = (TextView) findViewById(R.id.textViewClimaI);
-        textViewPresionI = (TextView) findViewById(R.id.textViewPresionI);
-        imgViewClima = (ImageView) findViewById(R.id.imgViewClima);
+        bottomBar = (ReadableBottomBar) findViewById(R.id.ReadableBottomBar1);
+        bottomBar.setOnItemSelectListener(new ReadableBottomBar.ItemSelectListener() {
+            @Override
+            public void onItemSelected(int i) {
+                switch (i){
+                    case 0:
+                        break;
+                    case 1:
+                        util.callActivity(MainActivity.this, ExplicitApiactivity.class);
+                        break;
+                }
+            }
+        });
+
+
 
     }
 
