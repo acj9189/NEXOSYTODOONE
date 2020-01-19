@@ -7,7 +7,6 @@
     <tab
         drawable="@drawable/ic_search_black_24"
         text="@string/search" />
-
-
+    
 
 </tabs>
