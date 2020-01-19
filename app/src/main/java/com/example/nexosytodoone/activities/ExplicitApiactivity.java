@@ -37,6 +37,7 @@ public class ExplicitApiactivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_explicit_api);
+        setTitle(R.string.title);
 
         apiClima = new ApiClima();
         util = new NaviUtilities();
@@ -77,6 +78,7 @@ public class ExplicitApiactivity extends AppCompatActivity {
     private void realizarConsulta(String lat, String lon){
         apiClima.getApiClimaEx(ExplicitApiactivity.this, lat, lon);
         util.sentMessageToUserCustomToast(ExplicitApiactivity.this, "Espere hasta que los elementos se carguen.");
+
 
 
     }

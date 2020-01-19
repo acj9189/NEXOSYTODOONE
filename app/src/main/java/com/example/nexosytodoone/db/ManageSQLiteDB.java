@@ -73,7 +73,7 @@ public class ManageSQLiteDB {
     private boolean addTableWEATHER(List<Object> data) {
        boolean response = false;
         ContentValues values = new ContentValues();
-        values.put(Constants.WEATHER_TABLE_FIELD_IDS, (Integer) data.get(0));
+        values.put(Constants.WEATHER_TABLE_FIELD_IDS, (double) data.get(0));
         values.put(Constants.WEATHER_TABLE_FIELD_CITY, (String) data.get(1));
         values.put(Constants.WEATHER_TABLE_FIELD_TEMPERATURE, (String) data.get(2));
         db.insert(Constants.WEATHER_TABLE, Constants.WEATHER_TABLE_FIELD_IDS, values);

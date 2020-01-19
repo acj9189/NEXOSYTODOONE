@@ -9,6 +9,7 @@ import com.example.nexosytodoone.db.ManageSQLiteDB;
 import com.example.nexosytodoone.db.SqlOpenHelperConection;
 import com.example.nexosytodoone.models.*;
 import com.example.nexosytodoone.utils.Constants;
+import com.example.nexosytodoone.utils.NaviUtilities;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -29,7 +30,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClima {
     private String BASE_URL = Constants.BASE_URL;                    // Contiene el main link de la ruta para hacer la consulta.
     private ApiInterfaceServices apiInterface;                      // Implementa la interfaz que sura retrofit para realizar el REST.
-    private Clima weather;                         // Objeto lista de asteroides.
+    private Clima weather;                                         // Objeto que contien el objeto clima traido desde la API.
+
+    private NaviUtilities util;
 
     /***
      *     Se encarga de configurar todo los parámetros necesarios para que la librería los utilice según la configuración.
@@ -41,6 +44,8 @@ public class ApiClima {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         this.apiInterface = retrofit.create(ApiInterfaceServices.class);
+        util = new NaviUtilities();
+
 
     }
 
@@ -141,5 +146,6 @@ public class ApiClima {
         data.add((Object) ciudad);
         response = manageSQLiteDB.addTable(Constants.WEATHER_TABLE, data);
         manageSQLiteDB.closeCoMakeConecction();
+        util.sentMessageToUserCustomToast(context, "Se almacenará en la base de datos la temperatura y el lugar.");
     }
 }

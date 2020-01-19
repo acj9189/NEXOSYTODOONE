@@ -8,8 +8,6 @@
         drawable="@drawable/ic_search_black_24"
         text="@string/search" />
 
-    <tab
-        drawable="@drawable/ic_shopping_basket_black_24"
-        text="@string/Encontrar" />
+
 
 </tabs>
